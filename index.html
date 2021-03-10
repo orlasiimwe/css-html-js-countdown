@@ -7,7 +7,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -23,6 +23,7 @@
 </head>
 
 <body>
+<section>
     <div class="container">
         <div class="heading">
             <h1>Mobile shop.ug</h1>
@@ -48,6 +49,7 @@
 
         </div>
     </div>
+    </section>
     <script type="text/javascript">
         const countDate = new Date('mar 15,2021 00:00:00').getTime();
 
@@ -70,9 +72,24 @@
             document.getElementById('minute').innerText = m;
             document.getElementById('second').innerText = s;
         }
+      
+        function changeBg(){
+            const images=[
+            'linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)),url("Banner1.jpeg")',
+            'linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)),url("Banner2.jpeg")',
+            'linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)),url("Banner3.jpeg")',
+            ]
+
+            const section = document.querySelector('section');
+
+            const bg= images[Math.floor(Math.random() * images.length)];
+            section.style.backgroundImage = bg
+        }
         setInterval(function () {
             newYear();
-        })
+        });
+        setInterval(changeBg, 2000)
+
     </script>
 </body>
 
